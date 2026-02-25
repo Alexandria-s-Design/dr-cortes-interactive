@@ -3,10 +3,6 @@
 // Scroll-driven narrative experience
 // ========================================
 
-// Vite CSS hot injection — edits apply instantly without page reload
-import '../css/styles.css';
-import '../css/chat-panel.css';
-
 // Translation data (ES/PT entry translations)
 import { ENTRIES_ES } from './timeline-entries-es.js';
 import { ENTRIES_PT } from './timeline-entries-pt.js';
