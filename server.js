@@ -16,7 +16,7 @@ const path = require('path');
 
 const app = express();
 const server = http.createServer(app);
-const wss = new WebSocketServer({ server });
+const wss = new WebSocketServer({ server, path: '/ws' });
 
 // API Keys (from .env)
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
@@ -162,7 +162,7 @@ const LANGUAGE_INSTRUCTIONS = {
 };
 
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static('docs'));
 
 // Client config endpoint (serves Simli credentials securely)
 app.get('/api/config', (req, res) => {

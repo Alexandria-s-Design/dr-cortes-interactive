@@ -11,10 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/chat-panel.css">
-
     <!-- GSAP for timeline animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
@@ -75,7 +71,7 @@
     <!-- ==================== SECTION 1: HERO ==================== -->
     <section id="hero" class="section section-hero">
         <div class="hero-content">
-            <p class="hero-hook" data-i18n="hero_hook">We live in a world shaped by how we understand each other.</p>
+            <p class="hero-hook" data-i18n="hero_hook">Every culture carries a curriculum — the question is whether we choose to learn from it.</p>
             <h1 class="hero-title">Dr. Carlos E. Cort&eacute;s</h1>
             <p class="hero-subtitle" data-i18n="hero_subtitle">This is the story of one man who spent seven decades building bridges.</p>
             <div class="hero-stats">
@@ -229,17 +225,8 @@
         </div>
     </div>
 
-    <!-- Translation Data (ES/PT entry translations) -->
-    <script src="assets/js/timeline-entries-es.js"></script>
-    <script src="assets/js/timeline-entries-pt.js"></script>
-    <script>
-        // Expose translations globally for app.js
-        window.ENTRIES_ES = typeof ENTRIES_ES !== 'undefined' ? ENTRIES_ES : {};
-        window.ENTRIES_PT = typeof ENTRIES_PT !== 'undefined' ? ENTRIES_PT : {};
-    </script>
-
     <!-- Main Application Script -->
-    <script src="assets/js/app.js"></script>
+    <script type="module" src="assets/js/app.js"></script>
     <!-- Chat Module -->
     <script type="module" src="assets/js/chat.js"></script>
 </body>

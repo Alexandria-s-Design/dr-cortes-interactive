@@ -4,7 +4,11 @@
   "description": "Interactive Dr. Cortes Timeline with Real-time Avatar Chatbot",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "concurrently \"nodemon server.js\" \"vite\"",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "git add -A && git commit -m \"deploy: update site\" && git push origin master"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
@@ -14,6 +18,9 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "@playwright/test": "^1.58.2"
+    "@playwright/test": "^1.58.2",
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.14",
+    "vite": "^7.3.1"
   }
 }

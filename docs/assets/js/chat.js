@@ -55,7 +55,7 @@ function connectWebSocket() {
     if (ws && ws.readyState === WebSocket.OPEN) return;
 
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    ws = new WebSocket(`${protocol}//${window.location.host}`);
+    ws = new WebSocket(`${protocol}//${window.location.host}/ws`);
 
     ws.onopen = () => {
         console.log('WebSocket connected');

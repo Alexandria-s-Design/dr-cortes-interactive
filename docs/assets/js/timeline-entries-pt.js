@@ -1,11 +1,11 @@
-const ENTRIES_PT = {
+export const ENTRIES_PT = {
   'Editor, Blue and Gold Yearbook, UC Berkeley': {
     title: 'Editor do Anuário Blue and Gold, UC Berkeley',
     desc: 'Atuou como editor do Blue and Gold, o anuário da Universidade da Califórnia, Berkeley. Essa função de liderança estudantil lançou sua carreira em comunicação e publicações.'
   },
   'Chair, Student Publications Board, UC Berkeley': {
     title: 'Presidente do Conselho de Publicações Estudantis, UC Berkeley',
-    desc: 'Presidiu o Conselho de Publicações Estudantis da Universidade da Califórnia, Berkeley. Supervisionou as publicações e operações editoriais do campus como líder estudantil de graduação.'
+    desc: 'Presidiu o Conselho de Publicações Estudantis da Universidade da Califórnia, Berkeley.'
   },
   'B.A., Communications and Public Policy (Phi Beta Kappa), UC Berkeley': {
     title: 'B.A., Comunicação e Políticas Públicas (Phi Beta Kappa), UC Berkeley',
@@ -13,11 +13,11 @@ const ENTRIES_PT = {
   },
   'M.S., Journalism, Columbia Graduate School of Journalism': {
     title: 'M.S., Jornalismo, Escola de Pós-Graduação em Jornalismo da Columbia',
-    desc: 'Obteve o título de Mestre em Ciências em Jornalismo pela Escola de Pós-Graduação em Jornalismo da Universidade Columbia. A formação na Ivy League fundamentou seu compromisso vitalício com a comunicação clara e acessível.'
+    desc: 'Obteve o título de Mestre em Ciências em Jornalismo pela Escola de Pós-Graduação em Jornalismo da Universidade Columbia.'
   },
   'Press Assistant, American Shakespeare Festival, Stratford, Connecticut': {
     title: 'Assistente de Imprensa, American Shakespeare Festival, Stratford, Connecticut',
-    desc: 'Atuou como assistente de imprensa no American Shakespeare Festival em Stratford, Connecticut. Aplicou sua formação em jornalismo à comunicação artística e relações públicas.'
+    desc: 'Atuou como assistente de imprensa no American Shakespeare Festival em Stratford, Connecticut. Aplicou sua formação em jornalismo à comunicação artística e relações públicas, trabalhando com grandes nomes do teatro como Katharine Hepburn e John Houseman.'
   },
   'Public Information Specialist, Fort Gordon, Georgia': {
     title: 'Especialista em Informação Pública, Fort Gordon, Geórgia',
@@ -25,7 +25,7 @@ const ENTRIES_PT = {
   },
   'Editor, Phoenix Sunpapers, Phoenix, Arizona': {
     title: 'Editor, Phoenix Sunpapers, Phoenix, Arizona',
-    desc: 'Trabalhou como editor do Phoenix Sunpapers em Phoenix, Arizona. Essa experiência profissional em jornalismo precedeu sua transição para a vida acadêmica e os estudos de pós-graduação em história.'
+    desc: 'Trabalhou como editor da cadeia Phoenix Sunpapers em Phoenix, Arizona. Essa experiência profissional em jornalismo precedeu sua transição para a vida acadêmica e os estudos de pós-graduação em história.'
   },
   'Bachelor of Foreign Trade, American Institute for Foreign Trade': {
     title: 'Bacharelado em Comércio Exterior, American Institute for Foreign Trade',
@@ -33,15 +33,15 @@ const ENTRIES_PT = {
   },
   'M.A., Portuguese, University of New Mexico': {
     title: 'M.A., Português, Universidade do Novo México',
-    desc: 'Concluiu o Mestrado em Português na Universidade do Novo México. A formação linguística o preparou para a pesquisa de doutorado sobre a política brasileira.'
+    desc: 'Concluiu o Mestrado em Português na Universidade do Novo México. A formação linguística e literária o preparou para a pesquisa de doutorado sobre a política brasileira.'
   },
   'Doctoral Dissertation Research in Brazil (Ford Foundation Fellowship)': {
     title: 'Pesquisa de Dissertação de Doutorado no Brasil (Bolsa da Fundação Ford)',
-    desc: 'Realizou pesquisa de dissertação de doutorado no Brasil com uma bolsa da Ford Foundation Foreign Area Fellowship. A pesquisa de campo sobre política regional no Rio Grande do Sul tornou-se a base de seu primeiro livro.'
+    desc: 'Realizou pesquisa de dissertação de doutorado no Brasil com uma bolsa da Ford Foundation Foreign Area Fellowship. A pesquisa de campo no politicamente poderoso estado do Rio Grande do Sul tornou-se a base de sua dissertação e primeiro livro.'
   },
   'Began Career as History Professor at UCR': {
     title: 'Iniciou a Carreira como Professor de História na UCR',
-    desc: 'Iniciou sua carreira como professor de história na Universidade da Califórnia, Riverside. Essa nomeação deu início ao que se tornaria uma associação de 57 anos com a UCR.'
+    desc: 'Iniciou sua carreira como professor de história na Universidade da Califórnia, Riverside. Essa nomeação deu início ao que se tornaria uma associação de seis décadas com a UCR.'
   },
   'Ph.D., History, University of New Mexico': {
     title: 'Ph.D., História, Universidade do Novo México',
@@ -49,7 +49,7 @@ const ENTRIES_PT = {
   },
   'Co-founded Mexican American Studies Program at UCR': {
     title: 'Cofundou o Programa de Estudos México-Americanos na UCR',
-    desc: 'Membro do comitê que projetou e fundou o Programa de Estudos México-Americanos (posteriormente renomeado para Estudos Chicanos) na UCR. Ajudou a estabelecer um dos primeiros programas de estudos étnicos no sistema da UC.'
+    desc: 'Membro do comitê que projetou e fundou o Programa de Estudos México-Americanos (posteriormente renomeado para Estudos Chicanos) na UCR, um dos primeiros programas de estudos étnicos no sistema da UC.'
   },
   'Taught UCR\'s First Chicano History Course': {
     title: 'Ministrou o Primeiro Curso de História Chicana da UCR',
@@ -105,7 +105,7 @@ const ENTRIES_PT = {
   },
   '\'Mexicans\' in Harvard Encyclopedia of American Ethnic Groups': {
     title: '\'Mexicans\' na Harvard Encyclopedia of American Ethnic Groups',
-    desc: 'Escreveu o ensaio \'Mexicans\', publicado na Harvard Encyclopedia of American Ethnic Groups.'
+    desc: 'Escreveu o ensaio \'Mexicans\' — uma visão geral da história e cultura mexicano-americana — publicado na Harvard Encyclopedia of American Ethnic Groups, uma obra de referência emblemática.'
   },
   'Began Teaching History of the Mass Media at UCR': {
     title: 'Começou a Lecionar História dos Meios de Comunicação de Massa na UCR',
@@ -113,15 +113,15 @@ const ENTRIES_PT = {
   },
   'UCR History Department Chair': {
     title: 'Chefe do Departamento de História da UCR',
-    desc: 'Tornou-se chefe do Departamento de História da UCR, servindo de 1982 a 1986.'
+    desc: 'Chefiou o Departamento de História da UCR de 1982 a 1986, um período que incluiu o estabelecimento de uma cátedra dotada em história dos povos indígenas americanos.'
   },
   'Guest Presenter, PBS \'Why in the World?\'': {
     title: 'Apresentador Convidado, PBS \'Why in the World?\'',
-    desc: 'Tornou-se apresentador convidado periódico na série nacional da PBS \'Why in the World?\', fazendo três aparições até 1984.'
+    desc: 'Tornou-se apresentador convidado periódico na série nacional da PBS \'Why in the World?\', fazendo três aparições até 1984. Levou sua experiência em diversidade e mídia ao público da televisão pública.'
   },
   'Bildner Fellow, Association of American Schools in South America': {
     title: 'Bolsista Bildner, Associação de Escolas Americanas na América do Sul',
-    desc: 'Atuou como Bolsista Bildner da Associação de Escolas Americanas na América do Sul.'
+    desc: 'Atuou como Bolsista Bildner da Associação de Escolas Americanas na América do Sul. Ministrou palestras e oficinas para escolas independentes americanas no Brasil, Paraguai e Uruguai.'
   },
   'Wrote PBS Documentary \'Latinos: A Growing Voice in U.S. Politics\'': {
     title: 'Escreveu o Documentário da PBS \'Latinos: A Growing Voice in U.S. Politics\'',
@@ -145,7 +145,7 @@ const ENTRIES_PT = {
   },
   'Edited \'Images and Realities of Four World Regions\'': {
     title: 'Editou \'Images and Realities of Four World Regions\'',
-    desc: 'Editou este currículo examinando perspectivas globais e desafiando estereótipos sobre regiões do mundo.'
+    desc: 'Editou este número especial de Social Education examinando perspectivas globais e desafiando estereótipos sobre regiões do mundo.'
   },
   'Faculty, Harvard Summer Institutes for Higher Education': {
     title: 'Docente dos Institutos de Verão de Harvard para o Ensino Superior',
@@ -153,15 +153,15 @@ const ENTRIES_PT = {
   },
   'Consultant, Japanese National Chamber of Commerce': {
     title: 'Consultor da Câmara Nacional de Comércio do Japão',
-    desc: 'Atuou como consultor da Câmara Nacional de Comércio do Japão.'
+    desc: 'Atuou como consultor da Câmara Nacional de Comércio do Japão. Aplicou sua experiência intercultural para melhorar a comunicação empresarial e a compreensão cultural dentro de organizações japonesas.'
   },
   'Advisory Committee, \'Talking with TJ\' (Hallmark Foundation)': {
     title: 'Comitê Consultivo, \'Talking with TJ\' (Fundação Hallmark)',
     desc: 'Iniciou participação no comitê consultivo de \'Talking with TJ\', uma série de mídia da Fundação Hallmark sobre resolução de conflitos juvenis.'
   },
-  '\'The Man Masks of Multicultural Education\' Lecture at UCLA': {
-    title: 'Palestra \'The Man Masks of Multicultural Education\' na UCLA',
-    desc: 'Proferiu a palestra \'The Man Masks of Multicultural Education\' na UCLA.'
+  '\'The Many Masks of Multicultural Education\' Lecture at UCLA': {
+    title: 'Palestra \'The Many Masks of Multicultural Education\' na UCLA',
+    desc: 'Proferiu a palestra \'The Many Masks of Multicultural Education\' em uma conferência na Universidade da Califórnia, Los Angeles. A palestra estabeleceu um marco para oficinas e formação docente nas duas décadas seguintes.'
   },
   'UCR Faculty Public Service Award': {
     title: 'Prêmio de Serviço Público do Corpo Docente da UCR',
@@ -173,7 +173,7 @@ const ENTRIES_PT = {
   },
   'Featured Presenter, Video Journal of Education\'s \'Diversity in the Classroom\'': {
     title: 'Apresentador Destaque, \'Diversity in the Classroom\' do Video Journal of Education',
-    desc: 'Apresentador destaque de \'Diversity in the Classroom\'. Amplamente utilizado em programas de formação de professores.'
+    desc: 'Apresentador destaque da série \'Diversity in the Classroom\' do Video Journal of Education. O vídeo de capacitação educacional de duas partes foi amplamente utilizado em programas de formação de professores em todo o país.'
   },
   'Took Early Retirement from the University of California': {
     title: 'Aposentou-se Antecipadamente da Universidade da Califórnia',
@@ -181,19 +181,19 @@ const ENTRIES_PT = {
   },
   'Faculty, Summer Institute for Intercultural Communication': {
     title: 'Docente do Instituto de Verão para Comunicação Intercultural',
-    desc: 'Tornou-se docente do Instituto de Verão para Comunicação Intercultural.'
+    desc: 'Tornou-se docente do Instituto de Verão para Comunicação Intercultural. Contribuiu para a formação de profissionais em compreensão intercultural.'
   },
   'Lecture Tour of Australian Universities': {
     title: 'Turnê de Palestras em Universidades Australianas',
-    desc: 'Realizou uma turnê de palestras em universidades australianas.'
+    desc: 'Realizou uma turnê de palestras em universidades australianas. Trabalhou com profissionais de ensino superior da Austrália e Nova Zelândia que enfrentavam seus próprios desafios de diversidade.'
   },
   'Faculty, Federal Executive Institute': {
     title: 'Docente do Instituto Federal Executivo',
-    desc: 'Tornou-se docente do Instituto Federal Executivo. Levou a educação sobre diversidade aos líderes seniores do governo federal.'
+    desc: 'Tornou-se docente do Instituto Federal Executivo. Levou perspectivas sobre diversidade aos líderes e administradores seniores do governo federal.'
   },
   'Founding Coordinator, Riverside Mayor\'s Multicultural Forum': {
     title: 'Coordenador Fundador do Fórum Multicultural do Prefeito de Riverside',
-    desc: 'Tornou-se coordenador fundador do Fórum Multicultural do Prefeito de Riverside.'
+    desc: 'Tornou-se coordenador fundador do Fórum Multicultural do Prefeito de Riverside, Califórnia. Estabeleceu uma assembleia cívica permanente para o diálogo comunitário sobre diversidade e inclusão.'
   },
   'Faculty, University of Maryland Civicus Living-Learning Program': {
     title: 'Docente do Programa de Aprendizagem Vivencial Civicus da Universidade de Maryland',
@@ -205,7 +205,7 @@ const ENTRIES_PT = {
   },
   'Creative/Cultural Advisor, Nickelodeon\'s Dora the Explorer': {
     title: 'Consultor Criativo/Cultural, Dora the Explorer da Nickelodeon',
-    desc: 'Tornou-se Consultor Criativo/Cultural da Dora the Explorer da Nickelodeon, atuando também em Go, Diego, Go!, Dora and Friends e Santiago of the Seas. Defendeu que Dora fosse \'pan-latina\'.'
+    desc: 'Tornou-se Consultor Criativo/Cultural da Dora the Explorer da Nickelodeon, posteriormente atuando em Go, Diego, Go!, Dora and Friends e Santiago of the Seas. Defendeu que Dora fosse \'pan-latina\'.'
   },
   'Outstanding Contribution to Higher Education Award, NASPA': {
     title: 'Prêmio de Contribuição Excepcional ao Ensino Superior, NASPA',
@@ -213,7 +213,7 @@ const ENTRIES_PT = {
   },
   'Riverside Inclusive Community Statement': {
     title: 'Declaração de Comunidade Inclusiva de Riverside',
-    desc: 'Facilitou e redigiu a Declaração de Comunidade Inclusiva de Riverside.'
+    desc: 'Facilitou e redigiu a Declaração de Comunidade Inclusiva de Riverside, Califórnia. Aprovada pelo conselho municipal de Riverside, articulou princípios fundamentais para construir uma comunidade inclusiva que abraçasse a diversidade como uma força cívica.'
   },
   'The Making — and Remaking — of a Multiculturalist': {
     title: 'The Making — and Remaking — of a Multiculturalist',
@@ -221,7 +221,7 @@ const ENTRIES_PT = {
   },
   'First Performance of \'A Conversation with Alana\'': {
     title: 'Primeira Apresentação de \'A Conversation with Alana\'',
-    desc: 'Primeira apresentação de sua peça autobiográfica solo. Apresentada aproximadamente 160 vezes em universidades nos Estados Unidos.'
+    desc: 'Primeira apresentação de sua peça autobiográfica solo. Apresentada mais de 150 vezes em universidades nos Estados Unidos.'
   },
   'UCR Emeritus Faculty Award': {
     title: 'Prêmio de Docente Emérito da UCR',
@@ -233,7 +233,7 @@ const ENTRIES_PT = {
   },
   '\'After the Rain: Tomás Rivera — The Legacy and Life\'': {
     title: '\'After the Rain: Tomás Rivera — The Legacy and Life\'',
-    desc: 'Escreveu, narrou e coproduziu o documentário sobre Tomás Rivera.'
+    desc: 'Escreveu, narrou e coproduziu a peça cênica de duas horas \'After the Rain: Tomás Rivera — The Legacy and Life\'. Homenageou o legado do pioneiro autor chicano e ex-reitor da UC.'
   },
   'Honorary Doctorate, College of Wooster': {
     title: 'Doutorado Honorário, College of Wooster',
@@ -245,7 +245,7 @@ const ENTRIES_PT = {
   },
   'Honorary Doctorate, DePaul University': {
     title: 'Doutorado Honorário, Universidade DePaul',
-    desc: 'Recebeu um doutorado honorário da Universidade DePaul em Chicago.'
+    desc: 'Recebeu um doutorado honorário da Universidade DePaul em Chicago após proferir um discurso de formatura.'
   },
   'Co-authored Musical \'We Are Not Alone: Tomás Rivera\'': {
     title: 'Coautor do Musical \'We Are Not Alone: Tomás Rivera\'',
@@ -253,7 +253,7 @@ const ENTRIES_PT = {
   },
   'Rose Hill: An Intermarriage before Its Time': {
     title: 'Rose Hill: An Intermarriage before Its Time',
-    desc: 'Publicou este memorial sobre crescer como filho de um pai mexicano católico e uma mãe judaica americana no Kansas City do pós-Segunda Guerra Mundial.'
+    desc: 'Publicou este memorial sobre crescer como filho de um pai mexicano-americano católico e uma mãe judaica americana no Kansas City do pós-Segunda Guerra Mundial. Adaptado de sua peça solo apresentada nacionalmente, o livro destaca o famoso \'momento Carl\' quando seu pai defendeu seu nome mexicano na escola secundária de Carlos.'
   },
   'Editor, Multicultural America: A Multimedia Encyclopedia (4 volumes)': {
     title: 'Editor, Multicultural America: A Multimedia Encyclopedia (4 volumes)',
@@ -261,7 +261,7 @@ const ENTRIES_PT = {
   },
   'AMPAS Project for Pacific Standard Time: LA/LA': {
     title: 'Projeto AMPAS para Pacific Standard Time: LA/LA',
-    desc: 'Membro do projeto da Academia de Artes e Ciências Cinematográficas para Pacific Standard Time: LA/LA.'
+    desc: 'Membro do projeto da Academia de Artes e Ciências Cinematográficas para Pacific Standard Time: LA/LA, Arte Latino-Americana e Latina em Los Angeles. Contribuiu com sua experiência em mídia para uma importante iniciativa artística celebrando as contribuições latinas e escreveu um artigo publicado sobre as contribuições de cineastas chicanos.'
   },
   'Carlos E. Cortés Diversity and Inclusion Award Established': {
     title: 'Prêmio Carlos E. Cortés de Diversidade e Inclusão Estabelecido',
@@ -277,7 +277,7 @@ const ENTRIES_PT = {
   },
   'Inaugural Fellow, UC National Center for Free Speech and Civic Engagement': {
     title: 'Bolsista Inaugural do Centro Nacional da UC para Liberdade de Expressão e Engajamento Cívico',
-    desc: 'Nomeado bolsista inaugural do Centro Nacional da UC para Liberdade de Expressão e Engajamento Cívico.'
+    desc: 'Nomeado bolsista inaugural do Centro Nacional da UC para Liberdade de Expressão e Engajamento Cívico. Realizou pesquisa sobre a relação de 50 anos entre diversidade e liberdade de expressão.'
   },
   'Columnist, American Diversity Report': {
     title: 'Colunista do American Diversity Report',
@@ -289,7 +289,7 @@ const ENTRIES_PT = {
   },
   'Initial Draft of Ethnic Studies Curriculum Principles for California': {
     title: 'Rascunho Inicial dos Princípios Curriculares de Estudos Étnicos para a Califórnia',
-    desc: 'Redigiu princípios para currículos de Estudos Étnicos do ensino médio para o Conselho Estadual de Educação da Califórnia. Adaptados para o Currículo Modelo final adotado em março de 2021.'
+    desc: 'Redigiu princípios para currículos de Estudos Étnicos do ensino médio para o Conselho Estadual de Educação da Califórnia. Adaptados para o Currículo Modelo de Estudos Étnicos final adotado em março de 2021.'
   },
   'Riverside Anti-Racism Vision Statement': {
     title: 'Declaração de Visão Antirracista de Riverside',
@@ -297,15 +297,15 @@ const ENTRIES_PT = {
   },
   'Co-director, HESJAR Curriculum, UCR School of Medicine': {
     title: 'Codiretor do Currículo HESJAR, Escola de Medicina da UCR',
-    desc: 'Nomeado codiretor do eixo curricular de Equidade em Saúde, Justiça Social e Antirracismo na Escola de Medicina da UCR.'
+    desc: 'Nomeado codiretor do eixo curricular de Equidade em Saúde, Justiça Social e Antirracismo na Escola de Medicina da UCR. Trouxe mais de 50 anos de experiência em diversidade para a educação médica.'
   },
-  'Cultural Advisor, Nickelodeon\'s Santiago of the Seas': {
-    title: 'Consultor Cultural, Santiago of the Seas da Nickelodeon',
-    desc: 'Atuou como Consultor Cultural da série animada Santiago of the Seas da Nickelodeon.'
+  'Creative/Cultural Advisor, Nickelodeon\'s Santiago of the Seas': {
+    title: 'Consultor Criativo/Cultural, Santiago of the Seas da Nickelodeon',
+    desc: 'Atuou como Consultor Criativo/Cultural da série animada Santiago of the Seas da Nickelodeon.'
   },
   'Constantine Panunzio Distinguished Emeriti Award': {
     title: 'Prêmio Constantine Panunzio de Emérito Distinto',
-    desc: 'Recebeu a mais alta honraria da UC para docentes eméritos. O primeiro da UC Riverside a recebê-la.'
+    desc: 'Recebeu a mais alta honraria da UC para docentes eméritos em humanidades, artes e ciências sociais. O primeiro da UC Riverside a recebê-la.'
   },
   'Consulting Humanist, Cheech Marin Center for Chicano Art and Culture': {
     title: 'Humanista Consultor do Centro Cheech Marin de Arte e Cultura Chicana',
@@ -329,14 +329,14 @@ const ENTRIES_PT = {
   },
   'Scouts\' Honor (Novel)': {
     title: 'Scouts\' Honor (Romance)',
-    desc: 'Publicou seu primeiro romance, um mistério ambientado no acampamento escoteiro Camp Matulia. Sua primeira incursão na ficção longa aos 91 anos.'
+    desc: 'Publicou seu primeiro romance, um mistério ambientado no fictício acampamento escoteiro Camp Matulia. Sua primeira incursão na ficção longa aos 91 anos.'
   },
   'Contributing Author, Creating the Intercultural Field: Legacies from the Pioneers': {
     title: 'Autor Contribuinte, Creating the Intercultural Field: Legacies from the Pioneers',
-    desc: 'Autor contribuinte de Creating the Intercultural Field: Legacies from the Pioneers.'
+    desc: 'Autor contribuinte de Creating the Intercultural Field: Legacies from the Pioneers. Refletiu sobre seu papel como uma figura importante no interculturalismo.'
   },
   'Multilingual Educator Hall of Fame, NABE': {
     title: 'Hall da Fama do Educador Multilíngue, NABE',
-    desc: 'Incluído no Hall da Fama do Educador Multilíngue pela Associação Nacional de Educação Bilíngue.'
+    desc: 'Incluído no Hall da Fama do Educador Multilíngue pela Associação Nacional de Educação Bilíngue. Reconhecido por suas contribuições ao longo da vida à educação bilíngue e multicultural, desde a cofundação da Associação da Califórnia para Educação Bilíngue (CABE) em 1975 até o presente.'
   }
 };
