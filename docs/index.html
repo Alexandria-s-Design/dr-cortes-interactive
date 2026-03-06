@@ -229,7 +229,122 @@
         </div>
     </div>
 
-    <!-- PDF Autobiography Modal -->    <div id="modal-autobiography" class="modal" role="dialog" aria-modal="true" aria-hidden="true">        <div class="modal-overlay" onclick="closeAutobiographyModal()"></div>        <div class="modal-container modal-pdf">            <button class="modal-close" onclick="closeAutobiographyModal()" aria-label="Close modal">                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">                    <line x1="18" y1="6" x2="6" y2="18"></line>                    <line x1="6" y1="6" x2="18" y2="18"></line>                </svg>            </button>            <div class="pdf-modal-header">                <div>                    <h3 class="pdf-modal-title">Professional Autobiography</h3>                    <p class="pdf-modal-subtitle">Dr. Carlos E. Cort&eacute;s — A Preliminary Guide to the Collection</p>                </div>                <span class="pdf-page-indicator" id="pdf-page-indicator"></span>            </div>            <div class="pdf-viewer-container" id="pdf-viewer-container">                <div class="pdf-loading" id="pdf-loading">                    <div class="pdf-loading-spinner"></div>                    <span>Loading autobiography...</span>                </div>            </div>        </div>    </div>    <!-- PDF.js Library -->    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.mjs" type="module"></script>    <script>    let pdfDoc = null;    let pdfRendered = false;    function openAutobiographyModal(e) {        if (e) e.preventDefault();        const modal = document.getElementById("modal-autobiography");        modal.classList.add("active");        modal.setAttribute("aria-hidden", "false");        document.body.style.overflow = "hidden";        if (!pdfRendered) loadPDF();    }    function closeAutobiographyModal() {        const modal = document.getElementById("modal-autobiography");        modal.classList.remove("active");        modal.setAttribute("aria-hidden", "true");        document.body.style.overflow = "";    }    document.addEventListener("keydown", function(e) {        if (e.key === "Escape") closeAutobiographyModal();    });    async function loadPDF() {        const container = document.getElementById("pdf-viewer-container");        const indicator = document.getElementById("pdf-page-indicator");        try {            const pdfjsLib = await import("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.mjs");            pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.worker.min.mjs";            const pdf = await pdfjsLib.getDocument("assets/documents/cec-professional-autobiography.pdf").promise;            pdfDoc = pdf;            const loading = document.getElementById("pdf-loading");            if (loading) loading.remove();            indicator.textContent = pdf.numPages + " pages";            const scrollPages = [];            for (let i = 1; i <= pdf.numPages; i++) {                const page = await pdf.getPage(i);                const scale = 2;                const viewport = page.getViewport({ scale });                const canvas = document.createElement("canvas");                canvas.className = "pdf-page-canvas";                canvas.width = viewport.width;                canvas.height = viewport.height;                canvas.dataset.page = i;                canvas.addEventListener("contextmenu", function(e) { e.preventDefault(); });                container.appendChild(canvas);                scrollPages.push(canvas);                const ctx = canvas.getContext("2d");                await page.render({ canvasContext: ctx, viewport }).promise;            }            pdfRendered = true;            container.addEventListener("scroll", function() {                const rect = container.getBoundingClientRect();                const mid = rect.top + rect.height / 2;                let current = 1;                scrollPages.forEach(c => {                    const cr = c.getBoundingClientRect();                    if (cr.top < mid) current = parseInt(c.dataset.page);                });                indicator.textContent = "Page " + current + " of " + pdf.numPages;            });        } catch (err) {            console.error("PDF load error:", err);            container.innerHTML = "<p style=\"color:var(--color-text-secondary);padding:2rem\">Unable to load the autobiography. Please try again later.</p>";        }    }    </script>    <!-- Main Application Script -->
+    <!-- PDF Autobiography Modal -->    <div id="modal-autobiography" class="modal" role="dialog" aria-modal="true" aria-hidden="true">        <div class="modal-overlay" onclick="closeAutobiographyModal()"></div>        <div class="modal-container modal-pdf">            <button class="modal-close" onclick="closeAutobiographyModal()" aria-label="Close modal">                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">                    <line x1="18" y1="6" x2="6" y2="18"></line>                    <line x1="6" y1="6" x2="18" y2="18"></line>                </svg>            </button>            <div class="pdf-modal-header">                <div>                    <h3 class="pdf-modal-title">Professional Autobiography</h3>                    <p class="pdf-modal-subtitle">Dr. Carlos E. Cort&eacute;s — A Preliminary Guide to the Collection</p>                </div>                <span class="pdf-page-indicator" id="pdf-page-indicator"></span>            </div>            <div class="pdf-viewer-container" id="pdf-viewer-container">                <div class="pdf-loading" id="pdf-loading">                    <div class="pdf-loading-spinner"></div>                    <span>Loading autobiography...</span>                </div>            </div>        </div>    </div>    <!-- PDF.js Library -->    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.mjs" type="module"></script>    <script>
+    let pdfDoc = null;
+    let pdfRendered = false;
+
+    function openAutobiographyModal(e) {
+        if (e) e.preventDefault();
+        const modal = document.getElementById('modal-autobiography');
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        if (!pdfRendered) loadPDF();
+    }
+
+    function closeAutobiographyModal() {
+        const modal = document.getElementById('modal-autobiography');
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeAutobiographyModal();
+    });
+
+    async function loadPDF() {
+        const container = document.getElementById('pdf-viewer-container');
+        const indicator = document.getElementById('pdf-page-indicator');
+        try {
+            const pdfjsLib = await import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.mjs');
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.worker.min.mjs';
+            const pdf = await pdfjsLib.getDocument('assets/documents/cec-professional-autobiography.pdf').promise;
+            pdfDoc = pdf;
+            const loading = document.getElementById('pdf-loading');
+            if (loading) loading.remove();
+            const totalPages = pdf.numPages;
+            indicator.textContent = totalPages + ' pages';
+
+            // Create placeholder divs for all pages
+            const placeholders = [];
+            for (let i = 1; i <= totalPages; i++) {
+                const div = document.createElement('div');
+                div.className = 'pdf-page-placeholder';
+                div.dataset.page = i;
+                div.style.width = '100%';
+                div.style.maxWidth = '800px';
+                div.style.minHeight = '1000px';
+                div.style.background = 'var(--color-surface)';
+                div.style.borderRadius = 'var(--radius-md)';
+                container.appendChild(div);
+                placeholders.push(div);
+            }
+
+            const SCALE = 1.5;
+            const rendered = new Set();
+
+            async function renderPage(pageNum) {
+                if (rendered.has(pageNum)) return;
+                rendered.add(pageNum);
+                const page = await pdf.getPage(pageNum);
+                const viewport = page.getViewport({ scale: SCALE });
+                const canvas = document.createElement('canvas');
+                canvas.className = 'pdf-page-canvas';
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+                canvas.dataset.page = pageNum;
+                canvas.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+                const placeholder = placeholders[pageNum - 1];
+                placeholder.style.minHeight = '0';
+                placeholder.replaceWith(canvas);
+                placeholders[pageNum - 1] = canvas;
+                const ctx = canvas.getContext('2d');
+                await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+            }
+
+            // Render first 3 pages immediately
+            for (let i = 1; i <= Math.min(3, totalPages); i++) {
+                await renderPage(i);
+            }
+
+            // Lazy-load rest via IntersectionObserver
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        const pageNum = parseInt(entry.target.dataset.page);
+                        renderPage(pageNum);
+                        // Pre-render next 2 pages
+                        if (pageNum + 1 <= totalPages) renderPage(pageNum + 1);
+                        if (pageNum + 2 <= totalPages) renderPage(pageNum + 2);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { root: container, rootMargin: '600px' });
+
+            placeholders.forEach(function(p, idx) {
+                if (idx >= 3) observer.observe(p);
+            });
+
+            // Page indicator on scroll
+            container.addEventListener('scroll', function() {
+                const rect = container.getBoundingClientRect();
+                const mid = rect.top + rect.height / 2;
+                let current = 1;
+                placeholders.forEach(function(c) {
+                    const cr = c.getBoundingClientRect();
+                    if (cr.top < mid) current = parseInt(c.dataset.page);
+                });
+                indicator.textContent = 'Page ' + current + ' of ' + totalPages;
+            });
+
+            pdfRendered = true;
+        } catch (err) {
+            console.error('PDF load error:', err);
+            container.innerHTML = '<p style="color:var(--color-text-secondary);padding:2rem">Unable to load the autobiography. Please try again later.</p>';
+        }
+    }
+    </script>    <!-- Main Application Script -->
     <script type="module" src="assets/js/app.js"></script>
     <!-- Chat Module -->
     <script type="module" src="assets/js/chat.js"></script>

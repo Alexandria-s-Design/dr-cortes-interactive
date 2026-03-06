@@ -801,7 +801,10 @@ const I18N = {
         awards_title: 'Premios y Honores',
         search_placeholder: 'Buscar por t\u00edtulo, categor\u00eda, a\u00f1o...',
         search_hint: 'Escribe al menos 2 caracteres para buscar...',
-        search_no_results: 'No se encontraron resultados.'
+        search_no_results: 'No se encontraron resultados.',
+        pdf_modal_title: 'Autobiografía Profesional',
+        pdf_modal_subtitle: 'Dr. Carlos E. Cortés — Guía Preliminar de la Colección',
+        pdf_loading: 'Cargando autobiografía...'
     },
     pt: {
         nav_home: 'In\u00edcio', nav_timeline: 'Cronologia', nav_story: 'Hist\u00f3ria', nav_ask: 'Perguntar', nav_works: 'Obras',
@@ -826,7 +829,10 @@ const I18N = {
         awards_title: 'Pr\u00eamios e Honras',
         search_placeholder: 'Buscar por t\u00edtulo, categoria, ano...',
         search_hint: 'Digite pelo menos 2 caracteres para buscar...',
-        search_no_results: 'Nenhum resultado encontrado.'
+        search_no_results: 'Nenhum resultado encontrado.',
+        pdf_modal_title: 'Autobiografia Profissional',
+        pdf_modal_subtitle: 'Dr. Carlos E. Cortés — Guia Preliminar da Coleção',
+        pdf_loading: 'Carregando autobiografia...'
     }
 };
 
