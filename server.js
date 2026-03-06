@@ -315,7 +315,7 @@ wss.on('connection', (ws) => {
                 if (!fullResponse) {
                     console.error('Empty response from GPT. Full data:', JSON.stringify(gptData));
                     // Fallback response
-                    const fallback = "I appreciate your question. Let me gather my thoughts on that topic.";
+                    const fallback = "I would love to tell you about my work in multicultural education or my published writings. What would you like to know?";
                     ws.send(JSON.stringify({ type: 'complete', text: fallback }));
                     return;
                 }
