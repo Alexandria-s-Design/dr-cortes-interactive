@@ -1,0 +1,235 @@
+SOURCE: carlosecortes — _static/index
+
+/*! This file is auto-generated */
+window.addComment=function(v){var I,C,h,E=v.document,b={commentReplyClass:"comment-reply-link",commentReplyTitleId:"reply-title",cancelReplyId:"cancel-comment-reply-link",commentFormId:"commentform",temporaryFormId:"wp-temp-form-div",parentIdFieldId:"comment_parent",postIdFieldId:"comment_post_ID"},e=v.MutationObserver||v.WebKitMutationObserver||v.MozMutationObserver,r="querySelector"in E&&"addEventListener"in v,n=!!E.documentElement.dataset;function t(){d(),e&&new e(o).observe(E.body,{childList:!0,subtree:!0})}function d(e){if(r&&(I=g(b.cancelReplyId),C=g(b.commentFormId),I)){I.addEventListener("touchstart",l),I.addEventListener("click",l);function t(e){if((e.metaKey||e.ctrlKey)&&13===e.keyCode&&"a"!==E.activeElement.tagName.toLowerCase())return C.removeEventListener("keydown",t),e.preventDefault(),C.submit.click(),!1}C&&C.addEventListener("keydown",t);for(var n,d=function(e){var t=b.commentReplyClass;e&&e.childNodes||(e=E);e=E.getElementsByClassName?e.getElementsByClassName(t):e.querySelectorAll("."+t);return e}(e),o=0,i=d.length;o (()=>{"use strict";var e={336:(e,t,r)=>{function n(){return window.JetpackScriptData}function o(){return n()?.site}function i(e=""){return`${n()?.site.admin_url}${e}`}function a(e=""){return i(`admin.php?page=jetpack${e}`)}function u(e=""){return i(`admin.php?page=my-jetpack${e}`)}function c(){return n()?.site.plan?.features?.active??[]}function p(e){return c().includes(e)}function s(){return"wpcom"===n()?.site?.host}function f(){return"woa"===n()?.site?.host}function d(){return n()?.site?.is_wpcom_platform}function l(){return"unknown"===n()?.site?.host}function m(e){return n()?.user.current_user.capabilities[e]}r.d(t,{$8:()=>d,IT:()=>p,L2:()=>l,Sy:()=>s,au:()=>n,d_:()=>m,e5:()=>u,hT:()=>i,lI:()=>f,mH:()=>c,oQ:()=>a,sV:()=>o})},729:(e,t,r)=>{r.d(t,{$8:()=>n.$8,IT:()=>n.IT,L2:()=>n.L2,Sy:()=>n.Sy,au:()=>n.au,d_:()=>n.d_,e5:()=>n.e5,hT:()=>n.hT,lI:()=>n.lI,mH:()=>n.mH,oQ:()=>n.oQ,sV:()=>n.sV});var n=r(336)}},t={};function r(n){var o=t[n];if(void 0!==o)return o.exports;var i=t[n]={exports:{}};return e[n](i,i.exports,r),i.exports}r.d=(e,t)=>{for(var n in t)r.o(t,n)&&!r.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},r.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),r.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})};var n={};r.r(n),r.d(n,{currentUserCan:()=>o.d_,getActiveFeatures:()=>o.mH,getAdminUrl:()=>o.hT,getJetpackAdminPageUrl:()=>o.oQ,getMyJetpackUrl:()=>o.e5,getScriptData:()=>o.au,getSiteData:()=>o.sV,isJetpackSelfHostedSite:()=>o.L2,isSimpleSite:()=>o.Sy,isWoASite:()=>o.lI,isWpcomPlatformSite:()=>o.$8,siteHasFeature:()=>o.IT});var o=r(729);return n})());;
+/**
+ * Observe how the user enters content into the comment form in order to determine whether it's a bot or not.
+ *
+ * Note that no actual input is being saved here, only counts and timings between events.
+ */
+
+( function() {
+ // Passive event listeners are guaranteed to never call e.preventDefault(),
+ // but they're not supported in all browsers. Use this feature detection
+ // to determine whether they're available for use.
+ var supportsPassive = false;
+
+ try {
+ var opts = Object.defineProperty( {}, 'passive', {
+ get : function() {
+ supportsPassive = true;
+ }
+ } );
+
+ window.addEventListener( 'testPassive', null, opts );
+ window.removeEventListener( 'testPassive', null, opts );
+ } catch ( e ) {}
+
+ function init() {
+ var input_begin = '';
+
+ var keydowns = {};
+ var lastKeyup = null;
+ var lastKeydown = null;
+ var keypresses = [];
+
+ var modifierKeys = [];
+ var correctionKeys = [];
+
+ var lastMouseup = null;
+ var lastMousedown = null;
+ var mouseclicks = [];
+
+ var mousemoveTimer = null;
+ var lastMousemoveX = null;
+ var lastMousemoveY = null;
+ var mousemoveStart = null;
+ var mousemoves = [];
+
+ var touchmoveCountTimer = null;
+ var touchmoveCount = 0;
+
+ var lastTouchEnd = null;
+ var lastTouchStart = null;
+ var touchEvents = [];
+
+ var scrollCountTimer = null;
+ var scrollCount = 0;
+
+ var correctionKeyCodes = [ 'Backspace', 'Delete', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Home', 'End', 'PageUp', 'PageDown' ];
+ var modifierKeyCodes = [ 'Shift', 'CapsLock' ];
+
+ var forms = document.querySelectorAll( 'form[method=post]' );
+
+ for ( var i = 0; i 1 ) {
+ keypress.push( keydowns[ e.key ][1] );
+ }
+
+ keypresses.push( keypress );
+ }
+ }
+
+ delete keydowns[ e.key ];
+
+ lastKeyup = keyupTime;
+ }, supportsPassive ? { passive: true } : false );
+
+ form.addEventListener( "focusin", function ( e ) {
+ lastKeydown = null;
+ lastKeyup = null;
+ keydowns = {};
+ }, supportsPassive ? { passive: true } : false );
+
+ form.addEventListener( "focusout", function ( e ) {
+ lastKeydown = null;
+ lastKeyup = null;
+ keydowns = {};
+ }, supportsPassive ? { passive: true } : false );
+ }
+
+ document.addEventListener( 'mousedown', function ( e ) {
+ lastMousedown = ( new Date() ).getTime();
+ }, supportsPassive ? { passive: true } : false );
+
+ document.addEventListener( 'mouseup', function ( e ) {
+ if ( ! lastMousedown ) {
+ // If the mousedown happened before this script was loaded, but the mouseup happened after...
+ return;
+ }
+
+ var now = ( new Date() ).getTime();
+
+ var mouseclick = [];
+ mouseclick.push( now - lastMousedown );
+
+ if ( lastMouseup ) {
+ mouseclick.push( lastMousedown - lastMouseup );
+ }
+
+ mouseclicks.push( mouseclick );
+
+ lastMouseup = now;
+
+ // If the mouse has been clicked, don't record this time as an interval between keypresses.
+ lastKeydown = null;
+ lastKeyup = null;
+ keydowns = {};
+ }, supportsPassive ? { passive: true } : false );
+
+ document.addEventListener( 'mousemove', function ( e ) {
+ if ( mousemoveTimer ) {
+ clearTimeout( mousemoveTimer );
+ mousemoveTimer = null;
+ }
+ else {
+ mousemoveStart = ( new Date() ).getTime();
+ lastMousemoveX = e.offsetX;
+ lastMousemoveY = e.offsetY;
+ }
+
+ mousemoveTimer = setTimeout( function ( theEvent, originalMousemoveStart ) {
+ var now = ( new Date() ).getTime() - 500; // To account for the timer delay.
+
+ var mousemove = [];
+ mousemove.push( now - originalMousemoveStart );
+ mousemove.push(
+ Math.round(
+ Math.sqrt(
+ Math.pow( theEvent.offsetX - lastMousemoveX, 2 ) +
+ Math.pow( theEvent.offsetY - lastMousemoveY, 2 )
+ )
+ )
+ );
+
+ if ( mousemove[1] > 0 ) {
+ // If there was no measurable distance, then it wasn't really a move.
+ mousemoves.push( mousemove );
+ }
+
+ mousemoveStart = null;
+ mousemoveTimer = null;
+ }, 500, e, mousemoveStart );
+ }, supportsPassive ? { passive: true } : false );
+
+ document.addEventListener( 'touchmove', function ( e ) {
+ if ( touchmoveCountTimer ) {
+ clearTimeout( touchmoveCountTimer );
+ }
+
+ touchmoveCountTimer = setTimeout( function () {
+ touchmoveCount++;
+ }, 500 );
+ }, supportsPassive ? { passive: true } : false );
+
+ document.addEventListener( 'touchstart', function ( e ) {
+ lastTouchStart = ( new Date() ).getTime();
+ }, supportsPassive ? { passive: true } : false );
+
+ document.addEventListener( 'touchend', function ( e ) {
+ if ( ! lastTouchStart ) {
+ // If the touchstart happened before this script was loaded, but the touchend happened after...
+ return;
+ }
+
+ var now = ( new Date() ).getTime();
+
+ var touchEvent = [];
+ touchEvent.push( now - lastTouchStart );
+
+ if ( lastTouchEnd ) {
+ touchEvent.push( lastTouchStart - lastTouchEnd );
+ }
+
+ touchEvents.push( touchEvent );
+
+ lastTouchEnd = now;
+
+ // Don't record this time as an interval between keypresses.
+ lastKeydown = null;
+ lastKeyup = null;
+ keydowns = {};
+ }, supportsPassive ? { passive: true } : false );
+
+ document.addEventListener( 'scroll', function ( e ) {
+ if ( scrollCountTimer ) {
+ clearTimeout( scrollCountTimer );
+ }
+
+ scrollCountTimer = setTimeout( function () {
+ scrollCount++;
+ }, 500 );
+ }, supportsPassive ? { passive: true } : false );
+ }
+
+ /**
+ * For the timestamp data that is collected, don't send more than `limit` data points in the request.
+ * Choose a random slice and send those.
+ */
+ function prepare_timestamp_array_for_request( a, limit ) {
+ if ( ! limit ) {
+ limit = 100;
+ }
+
+ var rv = '';
+
+ if ( a.length > 0 ) {
+ var random_starting_point = Math.max( 0, Math.floor( Math.random() * a.length - limit ) );
+
+ for ( var i = 0; i = 2 ) {
+ rv += "," + a[ random_starting_point + i ][1];
+ }
+
+ rv += ";";
+ }
+ }
+
+ return rv;
+ }
+
+ if ( document.readyState !== 'loading' ) {
+ init();
+ } else {
+ document.addEventListener( 'DOMContentLoaded', init );
+ }
+})();;
+!function(){var e=document.currentScript;function t(t){var n=document.createElement("script"),o=e||document.getElementsByTagName("script")[0];n.setAttribute("async",!0),n.setAttribute("src",t),o.parentNode.insertBefore(n,o)}function n(e,t){return Element.prototype.matches?e.matches(t):Element.prototype.msMatchesSelector?e.msMatchesSelector(t):void 0}function o(e,t){if(e.closest)return e.closest(t);var o=e;do{if(n(o,t))return o;o=o.parentElement||o.parentNode}while(null!==o&&1===o.nodeType);return null}function i(e,t){for(var n=0;n 0&&c.inject_share_count("sharing-pinterest-"+WPCOM_sharing_counts[e.url],e.count)},inject_share_count:function(e,t){i(document.querySelectorAll("a[data-shared="+e+"] > span"),function(e){var n,o=e.querySelector(".share-count");(n=o)&&n.parentNode&&n.parentNode.removeChild(n);var i=document.createElement("span");i.className="share-count",i.textContent=c.format_count(t),e.appendChild(i)})},format_count:function(e){return e =1e3&&e 2&&function(e,t){var n=t.parentElement;if(n.classList.contains("sd-content")){i(n.querySelectorAll(".share-email-error"),function(e){e.parentElement.removeChild(e)});var o=document.createElement("div");o.className="share-email-error";var r=document.createElement("h6");r.className="share-email-error-title",r.innerText=e.getAttribute("data-email-share-error-title"),o.appendChild(r);var s=document.createElement("p");s.className="share-email-error-text",s.innerText=e.getAttribute("data-email-share-error-text"),o.appendChild(s),n.appendChild(o)}}(t,e),l(s,r)})}))}),i(document.querySelectorAll("li.share-email, li.share-custom a.sharing-anchor"),function(e){e.classList.add("share-service-visible")})}"loading"!==document.readyState?h():document.addEventListener("DOMContentLoaded",h),document.body.addEventListener("is.post-load",p)}();;

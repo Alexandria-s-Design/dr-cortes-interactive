@@ -1,3 +1,13 @@
 node_modules/
 .env
 .DS_Store
+
+# Dev artifacts (not part of the app)
+test-results/
+playwright-report/
+localhost-screenshot.png
+localhost-source.html
+revamp-backup/
+revamp-source.html
+screenshot*.png
+section-*.png

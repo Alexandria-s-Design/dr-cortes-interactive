@@ -1,0 +1,340 @@
+Times New Roman;
+Courier;Cambria Math;
+Times New Roman;Times New Roman;
+Cambria;Times New Roman;
+Times New Roman;Times New Roman;
+Calibri;Times New Roman;Times New Roman CE;
+Times New Roman Cyr;Times New Roman Greek;Times New Roman Tur;Times New Roman (Hebrew);
+Times New Roman (Arabic);Times New Roman Baltic;Times New Roman (Vietnamese);Cambria Math CE;
+Cambria Math Cyr;Cambria Math Greek;Cambria Math Tur;Cambria Math Baltic;
+Times New Roman CE;Times New Roman Cyr;Times New Roman Greek;
+Times New Roman Tur;Times New Roman (Hebrew);Times New Roman (Arabic);
+Times New Roman Baltic;Times New Roman (Vietnamese);Times New Roman CE;
+Times New Roman Cyr;Times New Roman Greek;Times New Roman Tur;
+Times New Roman (Hebrew);Times New Roman (Arabic);Times New Roman Baltic;
+Times New Roman (Vietnamese);Cambria CE;Cambria Cyr;
+Cambria Greek;Cambria Tur;Cambria Baltic;
+Times New Roman CE;Times New Roman Cyr;Times New Roman Greek;
+Times New Roman Tur;Times New Roman (Hebrew);Times New Roman (Arabic);
+Times New Roman Baltic;Times New Roman (Vietnamese);Times New Roman CE;
+Times New Roman Cyr;Times New Roman Greek;Times New Roman Tur;
+Times New Roman (Hebrew);Times New Roman (Arabic);Times New Roman Baltic;
+Times New Roman (Vietnamese);Times New Roman CE;Times New Roman Cyr;
+Times New Roman Greek;Times New Roman Tur;Times New Roman (Hebrew);
+Times New Roman (Arabic);Times New Roman Baltic;Times New Roman (Vietnamese);
+Calibri CE;Calibri Cyr;Calibri Greek;Calibri Tur;
+Calibri Baltic;Times New Roman CE;Times New Roman Cyr;
+Times New Roman Greek;Times New Roman Tur;Times New Roman (Hebrew);
+Times New Roman (Arabic);Times New Roman Baltic;Times New Roman (Vietnamese);
+Normal;
+Default Text;
+Laurel V. Cortescarlos*http://schemas.microsoft.com/office/word/2003/wordml
+
+*.*.*.*)*()*()
+*()*()*()
+
+ 
+
+ 
+ BREAKFAST IN SUN CITY
+
+ 
+
+ 
+ (A
+ugust 20, 2014)
+
+ 
+ 
+
+ 
+ by Carlos E. Cortés 
+
+ 
+ 
+
+ 
+
+ Breakfast in Sun City
+
+ Its family time again
+
+ People coming from all over
+
+ Get together because then
+
+ 
+
+ They can spend some time with Grandma
+
+ Meet at Cocos right at nine
+
+ Have an omelet or a burger
+
+ Cup of coffee would be fine
+
+ 
+
+ 
+ At last I g
+et a table
+
+ To watch the world go 
+round
+
+ The mix of generations
+
+ From some tables, not a sound
+
+ 
+
+ A senior staring into space
+
+ A grandkid at 
+his phone
+
+ No need for conversation
+
+ Just people on their own
+
+ 
+
+ Its lovely to see families
+
+ Get together now and then
+
+ That mans waiting for his daughter
+
+ Oh, shell get here, not sure when
+
+ 
+
+ But she sure wont hold her smartphone
+
+ And everyone will see
+
+ That she smile
+s and talks and listens
+
+ While he tell
+s her of the tree
+
+ 
+
+ Thats just
+ about to blossom
+
+ And the grass thats growing tall
+
+ Hes sure he
+ll think of something else
+
+ If not, that will be all
+
+ 
+
+ Until the time, a month from now,
+
+ When she drives down again
+
+ To tell him that she loves 
+him
+
+ And will surely ask 
+him when
+
+ 
+
+ Hes coming up to visit her
+
+ So they can have more time
+
+ Theyve got so much to talk about
+
+ While hes still in 
+his prime
+
+ 
+
+ Of eighty years of living
+
+ Of eighty years of thought
+
+ Of eighty years of wisdom
+
+ Of things that can be taught
+
+ 
+
+ To all of his grandchildren
+
+ Who can learn so much for free
+
+ So much that cant be paid for
+
+ Theyll listen at his knee
+
+ 
+
+ Of course the kids are eager
+
+ But fiddle with
+ their caps
+
+ And even as he talk
+s to them
+
+ Theyre busy checking ap
+ps
+
+ 
+
+ Im glad that I was different
+
+ When with my family
+
+ And even as the years went by
+
+ Made certain I would see
+
+ 
+
+ My Grandm
+a and my Granddad
+
+ Each time I went back there
+
+ Such lovely conversations
+
+ I showed how much I cared
+
+ 
+
+ Then Granddad went, so Grandma
+
+ Lived alone amid their stuff
+
+ Theyd
+ saved and stored for decades
+
+ There was certainly enough
+
+ 
+
+ For her to tell me stories
+
+ Id heard so many times
+
+ I feigned pure fascination
+
+ Thats surely not a crime
+
+ 
+
+ One day when she was ninety-three
+
+ When saying our goodbye
+s
+
+ “Next time well go through photographs”
+
+ She looked into my eyes
+
+ 
+
+ But they came two days later
+
+ Paramedics took her in
+
+ She was gone before I reached her side
+
+ Thats surely not a sin
+
+ 
+
+ Im glad we talked so often
+
+ Im glad we talked so long 
+
+ Im glad I listened carefully
+
+ Im glad I heard her song
+
+ 
+
+ I looked around the restaurant
+
+ And as I watched, I knew
+
+ Id been a caring grandson
+
+ At least I think thats true
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+
+*Normal;
+heading 1;heading 2;heading 3;heading 4;
+heading 5;heading 6;heading 7;heading 8;heading 9;
+toc 1;toc 2;toc 3;toc 4;toc 5;toc 6;toc 7;
+toc 8;toc 9;caption;Title;Default Paragraph Font;
+Subtitle;Strong;Emphasis;
+Table Grid;Placeholder Text;No Spacing;
+Light Shading;Light List;Light Grid;
+Medium Shading 1;Medium Shading 2;Medium List 1;
+Medium List 2;Medium Grid 1;Medium Grid 2;
+Medium Grid 3;Dark List;Colorful Shading;
+Colorful List;Colorful Grid;Light Shading Accent 1;
+Light List Accent 1;Light Grid Accent 1;Medium Shading 1 Accent 1;
+Medium Shading 2 Accent 1;Medium List 1 Accent 1;Revision;
+List Paragraph;Quote;Intense Quote;
+Medium List 2 Accent 1;Medium Grid 1 Accent 1;Medium Grid 2 Accent 1;
+Medium Grid 3 Accent 1;Dark List Accent 1;Colorful Shading Accent 1;
+Colorful List Accent 1;Colorful Grid Accent 1;Light Shading Accent 2;
+Light List Accent 2;Light Grid Accent 2;Medium Shading 1 Accent 2;
+Medium Shading 2 Accent 2;Medium List 1 Accent 2;Medium List 2 Accent 2;
+Medium Grid 1 Accent 2;Medium Grid 2 Accent 2;Medium Grid 3 Accent 2;
+Dark List Accent 2;Colorful Shading Accent 2;Colorful List Accent 2;
+Colorful Grid Accent 2;Light Shading Accent 3;Light List Accent 3;
+Light Grid Accent 3;Medium Shading 1 Accent 3;Medium Shading 2 Accent 3;
+Medium List 1 Accent 3;Medium List 2 Accent 3;Medium Grid 1 Accent 3;
+Medium Grid 2 Accent 3;Medium Grid 3 Accent 3;Dark List Accent 3;
+Colorful Shading Accent 3;Colorful List Accent 3;Colorful Grid Accent 3;
+Light Shading Accent 4;Light List Accent 4;Light Grid Accent 4;
+Medium Shading 1 Accent 4;Medium Shading 2 Accent 4;Medium List 1 Accent 4;
+Medium List 2 Accent 4;Medium Grid 1 Accent 4;Medium Grid 2 Accent 4;
+Medium Grid 3 Accent 4;Dark List Accent 4;Colorful Shading Accent 4;
+Colorful List Accent 4;Colorful Grid Accent 4;Light Shading Accent 5;
+Light List Accent 5;Light Grid Accent 5;Medium Shading 1 Accent 5;
+Medium Shading 2 Accent 5;Medium List 1 Accent 5;Medium List 2 Accent 5;
+Medium Grid 1 Accent 5;Medium Grid 2 Accent 5;Medium Grid 3 Accent 5;
+Dark List Accent 5;Colorful Shading Accent 5;Colorful List Accent 5;
+Colorful Grid Accent 5;Light Shading Accent 6;Light List Accent 6;
+Light Grid Accent 6;Medium Shading 1 Accent 6;Medium Shading 2 Accent 6;
+Medium List 1 Accent 6;Medium List 2 Accent 6;Medium Grid 1 Accent 6;
+Medium Grid 2 Accent 6;Medium Grid 3 Accent 6;Dark List Accent 6;
+Colorful Shading Accent 6;Colorful List Accent 6;Colorful Grid Accent 6;
+Subtle Emphasis;Intense Emphasis;
+Subtle Reference;Intense Reference;
+Book Title;Bibliography;TOC Heading;

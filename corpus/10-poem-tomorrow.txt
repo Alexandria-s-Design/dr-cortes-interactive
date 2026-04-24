@@ -1,0 +1,148 @@
+Times New Roman;
+Courier;Cambria Math;
+Times New Roman;Times New Roman;
+Cambria;Times New Roman;
+Times New Roman;Times New Roman;
+Calibri;Times New Roman;Times New Roman CE;
+Times New Roman Cyr;Times New Roman Greek;Times New Roman Tur;Times New Roman (Hebrew);
+Times New Roman (Arabic);Times New Roman Baltic;Times New Roman (Vietnamese);Cambria Math CE;
+Cambria Math Cyr;Cambria Math Greek;Cambria Math Tur;Cambria Math Baltic;
+Times New Roman CE;Times New Roman Cyr;Times New Roman Greek;
+Times New Roman Tur;Times New Roman (Hebrew);Times New Roman (Arabic);
+Times New Roman Baltic;Times New Roman (Vietnamese);Times New Roman CE;
+Times New Roman Cyr;Times New Roman Greek;Times New Roman Tur;
+Times New Roman (Hebrew);Times New Roman (Arabic);Times New Roman Baltic;
+Times New Roman (Vietnamese);Cambria CE;Cambria Cyr;
+Cambria Greek;Cambria Tur;Cambria Baltic;
+Times New Roman CE;Times New Roman Cyr;Times New Roman Greek;
+Times New Roman Tur;Times New Roman (Hebrew);Times New Roman (Arabic);
+Times New Roman Baltic;Times New Roman (Vietnamese);Times New Roman CE;
+Times New Roman Cyr;Times New Roman Greek;Times New Roman Tur;
+Times New Roman (Hebrew);Times New Roman (Arabic);Times New Roman Baltic;
+Times New Roman (Vietnamese);Times New Roman CE;Times New Roman Cyr;
+Times New Roman Greek;Times New Roman Tur;Times New Roman (Hebrew);
+Times New Roman (Arabic);Times New Roman Baltic;Times New Roman (Vietnamese);
+Calibri CE;Calibri Cyr;Calibri Greek;Calibri Tur;
+Calibri Baltic;Times New Roman CE;Times New Roman Cyr;
+Times New Roman Greek;Times New Roman Tur;Times New Roman (Hebrew);
+Times New Roman (Arabic);Times New Roman Baltic;Times New Roman (Vietnamese);
+Normal;
+Default Text;Laurel V. Cortescarlos
+*http://schemas.microsoft.com/office/word/2003/wordml
+
+*.*.*.*)*()*()
+*()*()*()
+
+ 
+
+ 
+ Tomorrow
+
+ 
+ 
+
+ by Carlos E. Cortés
+
+ 
+
+ 
+
+ Tomorrow and tomorrow and tomorrow
+
+ Recede relentlessly 
+
+ From an assumption
+
+ Into an 
+expectation
+
+ Followed by
+
+ Hope
+
+ Concern
+
+ Fear
+
+ And then resignation
+
+ 
+
+ But finally, 
+
+ if all goes well,
+
+ a return to the ordinary pleasures
+
+ Of reminiscing about having led
+
+ A pretty good life
+
+ And finally the unexpected jubilation
+
+ Of the sun coming up
+
+ One last time
+
+ With my loved ones
+
+ Glorious face on the pillow
+
+ Next to me
+
+ Still smiling
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+*Normal;
+heading 1;heading 2;heading 3;heading 4;
+heading 5;heading 6;heading 7;heading 8;heading 9;
+toc 1;toc 2;toc 3;toc 4;toc 5;toc 6;toc 7;
+toc 8;toc 9;caption;Title;Default Paragraph Font;
+Subtitle;Strong;Emphasis;
+Table Grid;Placeholder Text;No Spacing;
+Light Shading;Light List;Light Grid;
+Medium Shading 1;Medium Shading 2;Medium List 1;
+Medium List 2;Medium Grid 1;Medium Grid 2;
+Medium Grid 3;Dark List;Colorful Shading;
+Colorful List;Colorful Grid;Light Shading Accent 1;
+Light List Accent 1;Light Grid Accent 1;Medium Shading 1 Accent 1;
+Medium Shading 2 Accent 1;Medium List 1 Accent 1;Revision;
+List Paragraph;Quote;Intense Quote;
+Medium List 2 Accent 1;Medium Grid 1 Accent 1;Medium Grid 2 Accent 1;
+Medium Grid 3 Accent 1;Dark List Accent 1;Colorful Shading Accent 1;
+Colorful List Accent 1;Colorful Grid Accent 1;Light Shading Accent 2;
+Light List Accent 2;Light Grid Accent 2;Medium Shading 1 Accent 2;
+Medium Shading 2 Accent 2;Medium List 1 Accent 2;Medium List 2 Accent 2;
+Medium Grid 1 Accent 2;Medium Grid 2 Accent 2;Medium Grid 3 Accent 2;
+Dark List Accent 2;Colorful Shading Accent 2;Colorful List Accent 2;
+Colorful Grid Accent 2;Light Shading Accent 3;Light List Accent 3;
+Light Grid Accent 3;Medium Shading 1 Accent 3;Medium Shading 2 Accent 3;
+Medium List 1 Accent 3;Medium List 2 Accent 3;Medium Grid 1 Accent 3;
+Medium Grid 2 Accent 3;Medium Grid 3 Accent 3;Dark List Accent 3;
+Colorful Shading Accent 3;Colorful List Accent 3;Colorful Grid Accent 3;
+Light Shading Accent 4;Light List Accent 4;Light Grid Accent 4;
+Medium Shading 1 Accent 4;Medium Shading 2 Accent 4;Medium List 1 Accent 4;
+Medium List 2 Accent 4;Medium Grid 1 Accent 4;Medium Grid 2 Accent 4;
+Medium Grid 3 Accent 4;Dark List Accent 4;Colorful Shading Accent 4;
+Colorful List Accent 4;Colorful Grid Accent 4;Light Shading Accent 5;
+Light List Accent 5;Light Grid Accent 5;Medium Shading 1 Accent 5;
+Medium Shading 2 Accent 5;Medium List 1 Accent 5;Medium List 2 Accent 5;
+Medium Grid 1 Accent 5;Medium Grid 2 Accent 5;Medium Grid 3 Accent 5;
+Dark List Accent 5;Colorful Shading Accent 5;Colorful List Accent 5;
+Colorful Grid Accent 5;Light Shading Accent 6;Light List Accent 6;
+Light Grid Accent 6;Medium Shading 1 Accent 6;Medium Shading 2 Accent 6;
+Medium List 1 Accent 6;Medium List 2 Accent 6;Medium Grid 1 Accent 6;
+Medium Grid 2 Accent 6;Medium Grid 3 Accent 6;Dark List Accent 6;
+Colorful Shading Accent 6;Colorful List Accent 6;Colorful Grid Accent 6;
+Subtle Emphasis;Intense Emphasis;
+Subtle Reference;Intense Reference;
+Book Title;Bibliography;TOC Heading;
