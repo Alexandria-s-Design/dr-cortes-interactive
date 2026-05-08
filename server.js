@@ -33,7 +33,7 @@ const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
 const VOICE_ID = process.env.VOICE_ID;
 const SIMLI_API_KEY = process.env.SIMLI_API_KEY;
 const SIMLI_FACE_ID = process.env.SIMLI_FACE_ID;
-const PREVIEW_PASSWORD = process.env.PREVIEW_PASSWORD || 'cortes2026';
+const PREVIEW_PASSWORD = process.env.PREVIEW_PASSWORD || 'Carlos1234';
 const PREVIEW_COOKIE = 'dr_cortes_preview';
 
 // Warm up retrieval corpus at startup so first request is fast.

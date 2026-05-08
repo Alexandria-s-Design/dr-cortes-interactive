@@ -10,6 +10,17 @@
 
 ---
 
+### 2026-05-08 10:18:00 — Codex (GPT)
+**Task**: Change the preview bypass password to Carlos1234.
+**Changes**:
+- Updated the server fallback preview password to `Carlos1234`.
+- Set Render `PREVIEW_PASSWORD` to `Carlos1234`.
+
+**Commit**: `Set Dr. Cortes preview password`
+**Status**: ✅ Pushed
+
+---
+
 ### 2026-05-08 10:10:00 — Codex (GPT)
 **Task**: Add a password bypass for the Coming Soon screen.
 **Changes**:
