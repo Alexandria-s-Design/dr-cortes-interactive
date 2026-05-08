@@ -43,6 +43,78 @@ try {
 }
 
 app.use(express.json());
+
+app.get(['/', '/index.html'], (req, res) => {
+    res.type('html').send(`<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dr. Carlos E. Cortes - Coming Soon</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #0b111c;
+            --panel: #121b2a;
+            --text: #f4f1ea;
+            --muted: #aab3c2;
+            --accent: #d6af2f;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 32px;
+            font-family: Georgia, "Times New Roman", serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        main {
+            width: min(680px, 100%);
+            padding: 48px 40px;
+            border: 1px solid rgba(214, 175, 47, 0.28);
+            background: var(--panel);
+            text-align: center;
+        }
+
+        p {
+            margin: 0;
+            color: var(--muted);
+            font: 18px/1.6 Arial, sans-serif;
+        }
+
+        h1 {
+            margin: 12px 0 18px;
+            font-size: clamp(42px, 8vw, 78px);
+            line-height: 0.95;
+            font-weight: 700;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font: 700 13px/1 Arial, sans-serif;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <p class="eyebrow">Dr. Carlos E. Cortes</p>
+        <h1>Coming Soon</h1>
+        <p>We are preparing the interactive timeline and archive. Please check back soon.</p>
+    </main>
+</body>
+</html>`);
+});
+
 app.use(express.static('docs'));
 
 // Client config endpoint (serves Simli credentials securely)
