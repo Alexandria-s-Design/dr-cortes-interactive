@@ -33,6 +33,8 @@ const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
 const VOICE_ID = process.env.VOICE_ID;
 const SIMLI_API_KEY = process.env.SIMLI_API_KEY;
 const SIMLI_FACE_ID = process.env.SIMLI_FACE_ID;
+const PREVIEW_PASSWORD = process.env.PREVIEW_PASSWORD || 'cortes2026';
+const PREVIEW_COOKIE = 'dr_cortes_preview';
 
 // Warm up retrieval corpus at startup so first request is fast.
 try {
@@ -43,8 +45,32 @@ try {
 }
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+function hasPreviewAccess(req) {
+    const cookieHeader = req.headers.cookie || '';
+    return cookieHeader
+        .split(';')
+        .map(cookie => cookie.trim())
+        .includes(`${PREVIEW_COOKIE}=1`);
+}
+
+function previewCookie(req) {
+    const secure = req.secure || req.headers['x-forwarded-proto'] === 'https';
+    const parts = [`${PREVIEW_COOKIE}=1`, 'Path=/', 'HttpOnly', 'SameSite=Lax', 'Max-Age=86400'];
+    if (secure) {
+        parts.push('Secure');
+    }
+    return parts.join('; ');
+}
 
 app.get(['/', '/index.html'], (req, res) => {
+    if (hasPreviewAccess(req)) {
+        res.redirect('/timeline');
+        return;
+    }
+
+    const hasError = req.query.error === '1';
     res.type('html').send(`<!doctype html>
 <html lang="en">
 <head>
@@ -90,6 +116,35 @@ app.get(['/', '/index.html'], (req, res) => {
             font: 18px/1.6 Arial, sans-serif;
         }
 
+        form {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 28px;
+        }
+
+        input,
+        button {
+            min-height: 44px;
+            border: 1px solid rgba(244, 241, 234, 0.22);
+            font: 16px/1 Arial, sans-serif;
+        }
+
+        input {
+            width: min(280px, 100%);
+            padding: 0 14px;
+            background: #0b111c;
+            color: var(--text);
+        }
+
+        button {
+            padding: 0 18px;
+            background: var(--accent);
+            color: #0b111c;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
         h1 {
             margin: 12px 0 18px;
             font-size: clamp(42px, 8vw, 78px);
@@ -103,6 +158,27 @@ app.get(['/', '/index.html'], (req, res) => {
             letter-spacing: 0.14em;
             text-transform: uppercase;
         }
+
+        .error {
+            margin-top: 14px;
+            color: #ffb4a8;
+            font-size: 15px;
+        }
+
+        @media (max-width: 560px) {
+            main {
+                padding: 40px 24px;
+            }
+
+            form {
+                flex-direction: column;
+            }
+
+            input,
+            button {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -110,9 +186,33 @@ app.get(['/', '/index.html'], (req, res) => {
         <p class="eyebrow">Dr. Carlos E. Cortes</p>
         <h1>Coming Soon</h1>
         <p>We are preparing the interactive timeline and archive. Please check back soon.</p>
+        <form method="post" action="/preview-access">
+            <input type="password" name="password" aria-label="Preview password" placeholder="Preview password" autocomplete="current-password">
+            <button type="submit">Enter</button>
+        </form>
+        ${hasError ? '<p class="error">Incorrect password.</p>' : ''}
     </main>
 </body>
 </html>`);
+});
+
+app.post('/preview-access', (req, res) => {
+    if (req.body.password === PREVIEW_PASSWORD) {
+        res.setHeader('Set-Cookie', previewCookie(req));
+        res.redirect('/timeline');
+        return;
+    }
+
+    res.redirect('/?error=1');
+});
+
+app.get('/timeline', (req, res) => {
+    if (!hasPreviewAccess(req)) {
+        res.redirect('/');
+        return;
+    }
+
+    res.sendFile(path.join(__dirname, 'docs', 'index.html'));
 });
 
 app.use(express.static('docs'));

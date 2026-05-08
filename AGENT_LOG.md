@@ -9,3 +9,15 @@
 **Status**: ✅ Pushed
 
 ---
+
+### 2026-05-08 10:10:00 — Codex (GPT)
+**Task**: Add a password bypass for the Coming Soon screen.
+**Changes**:
+- Added a password form to the Coming Soon page.
+- Added `/preview-access` to set a preview cookie after a correct password.
+- Added `/timeline` to serve the original interactive timeline/chatbot for preview users.
+
+**Commit**: `Gate Dr. Cortes preview behind password`
+**Status**: ✅ Pushed
+
+---
