@@ -1,0 +1,12 @@
+[Unit]
+Description=Dr. Cortes RAG email monitor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+Environment=HOME=/root
+Environment=GOG_KEYRING_PASSWORD=openclaw2026
+Environment=DR_CORTES_RAG_SLACK_CHANNEL=C0B4W5NN39Q
+WorkingDirectory=/root/dr-cortes-rag-monitor
+ExecStart=/usr/bin/python3 /root/dr-cortes-rag-monitor/dr-cortes-rag-email-monitor.py --days 14

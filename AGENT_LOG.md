@@ -81,3 +81,16 @@
 **Status**: ✅ Pushed
 
 ---
+
+### 2026-05-19 13:13:56 — Codex (GPT)
+**Task**: Set up Slack/OpenClaw monitoring for future Dr. Cortes RAG email materials.
+**Changes**:
+- Created the `#dr-cortes-rag-ingest` Slack channel and bound it to the `dr-cortes-rag-ingest` OpenClaw agent on the VPS.
+- Added a VPS email monitor that checks `charlesmartinedd@gmail.com` and `alexandriasworld1234@gmail.com` for Carlos emails with explicit RAG/avatar/corpus language.
+- Configured the monitor to upload approved attachments/source links to the OpenAI vector store and post audit summaries to Slack.
+- Installed and enabled a systemd timer that runs the monitor every 10 minutes; seeded existing Carlos messages to avoid duplicate ingestion.
+
+**Commit**: `Add Cortes RAG email monitor`
+**Status**: ✅ Pushed
+
+---
