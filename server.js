@@ -2,7 +2,7 @@
  * Dr. Cortes Real-Time Avatar Server
  *
  * Handles:
- * - OpenAI GPT-5.2 chat
+ * - OpenAI GPT-5.5 chat with hosted vector-store retrieval
  * - ElevenLabs TTS with PCM16 output
  * - Simli WebRTC session management
  */
@@ -21,7 +21,7 @@ const {
     validateOutput,
     pickRefusal
 } = require('./lib/guardrails');
-const { retrieve, loadCorpus } = require('./lib/retrieval');
+const { answerFromCorpus, DEFAULT_MODEL, DEFAULT_VECTOR_STORE_ID } = require('./lib/openai-vector-store');
 
 const app = express();
 const server = http.createServer(app);
@@ -33,16 +33,12 @@ const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
 const VOICE_ID = process.env.VOICE_ID;
 const SIMLI_API_KEY = process.env.SIMLI_API_KEY;
 const SIMLI_FACE_ID = process.env.SIMLI_FACE_ID;
+const OPENAI_MODEL = process.env.OPENAI_MODEL || DEFAULT_MODEL;
+const OPENAI_VECTOR_STORE_ID = process.env.OPENAI_VECTOR_STORE_ID || DEFAULT_VECTOR_STORE_ID;
 const PREVIEW_PASSWORD = process.env.PREVIEW_PASSWORD || 'Carlos1234';
 const PREVIEW_COOKIE = 'dr_cortes_preview';
 
-// Warm up retrieval corpus at startup so first request is fast.
-try {
-    loadCorpus();
-} catch (err) {
-    console.error('[startup] Failed to load corpus-embeddings.json:', err.message);
-    console.error('[startup] Run: node scripts/embed-corpus.js to generate it.');
-}
+console.log(`[startup] OpenAI model=${OPENAI_MODEL} vector_store=${OPENAI_VECTOR_STORE_ID}`);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -328,79 +324,35 @@ wss.on('connection', (ws) => {
                     return;
                 }
 
-                // --- Stage 2: retrieve grounded context ---
-                let retrieval;
+                // --- Stage 2: OpenAI hosted vector-store retrieval + GPT-5.5 generation ---
+                let groundedAnswer;
                 try {
-                    retrieval = await retrieve(userMessage, { openaiApiKey: OPENAI_API_KEY });
-                    console.log(`[retrieval] retrieved=${retrieval.retrieved}  maxSim=${retrieval.maxSim.toFixed(2)}`);
+                    groundedAnswer = await answerFromCorpus({
+                        query: userMessage,
+                        instructions: conversationHistory[0].content,
+                        openaiApiKey: OPENAI_API_KEY
+                    });
+                    console.log(`[openai-rag] model=${groundedAnswer.model} retrieved=${groundedAnswer.retrieved} maxScore=${groundedAnswer.maxScore.toFixed(2)} fileSearchResults=${groundedAnswer.fileSearchResults}`);
                 } catch (err) {
-                    console.error('[retrieval] failed:', err.message);
+                    console.error('[openai-rag] failed:', err.message);
                     const refusal = pickRefusal('R-SPEC', currentLang);
                     ws.send(JSON.stringify({ type: 'complete', text: refusal }));
                     return;
                 }
 
-                if (retrieval.retrieved === 0) {
+                if (groundedAnswer.retrieved === 0 || !groundedAnswer.text) {
                     // No grounded context -> refuse rather than hallucinate
                     const refusal = pickRefusal('R-SPEC', currentLang);
-                    console.log(`[refuse:no-context] -> ${refusal}`);
+                    console.log(`[refuse:no-context] maxScore=${groundedAnswer.maxScore.toFixed(2)} -> ${refusal}`);
                     conversationHistory.push({ role: 'user', content: userMessage });
                     conversationHistory.push({ role: 'assistant', content: refusal });
                     ws.send(JSON.stringify({ type: 'complete', text: refusal }));
                     return;
                 }
 
-                // --- Stage 3: generate with retrieved context injected ---
-                const groundedUserMessage = `RETRIEVED CONTEXT (from your own writings — answer ONLY from this, in your own voice):
+                let fullResponse = groundedAnswer.text;
 
-${retrieval.contextBlock}
-
----
-
-USER QUESTION: ${userMessage}
-
-Answer in first person as Dr. Cortés, grounded strictly in the retrieved context above. If the context does not clearly answer the question, refuse warmly and redirect. Under 40 words. No markdown.`;
-
-                // Keep a clean history (persona + this turn only — we don't accumulate RAG context across turns)
-                const turnMessages = [
-                    conversationHistory[0], // system: persona + language
-                    { role: 'user', content: groundedUserMessage }
-                ];
-
-                await delay(300); // helps Simli stabilize
-
-                console.log('Calling GPT-5.2...');
-                const response = await fetch('https://api.openai.com/v1/chat/completions', {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': `Bearer ${OPENAI_API_KEY}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        model: 'gpt-5.2-chat-latest',
-                        messages: turnMessages,
-                        max_completion_tokens: 200
-                    })
-                });
-
-                const gptData = await response.json();
-
-                if (gptData.error) {
-                    console.error('GPT Error:', gptData.error);
-                    ws.send(JSON.stringify({ type: 'error', message: gptData.error.message }));
-                    return;
-                }
-
-                let fullResponse = gptData.choices?.[0]?.message?.content || '';
-
-                if (!fullResponse) {
-                    console.error('Empty response from GPT. Full data:', JSON.stringify(gptData));
-                    const refusal = pickRefusal('R-SPEC', currentLang);
-                    ws.send(JSON.stringify({ type: 'complete', text: refusal }));
-                    return;
-                }
-
-                // --- Stage 4: validate output ---
+                // --- Stage 3: validate output ---
                 const validation = validateOutput(fullResponse);
                 if (!validation.ok) {
                     console.log(`[refuse:output] ${validation.reason} -> swapping in refusal`);

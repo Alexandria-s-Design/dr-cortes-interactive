@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "concurrently \"nodemon server.js\" \"vite\"",
+    "test": "node tests/validate-data.js && playwright test",
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "git add -A && git commit -m \"deploy: update site\" && git push origin master"

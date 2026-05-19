@@ -32,3 +32,15 @@
 **Status**: ✅ Pushed
 
 ---
+
+### 2026-05-19 10:44:47 — Codex (GPT)
+**Task**: Add poetry and Cranky Old Man materials to OpenAI ingestion, switch the chatbot to GPT-5.5 plus the OpenAI vector store, and test it.
+**Changes**:
+- Uploaded 14 poetry and Cranky Old Man files to the `dr-cortes-interactive-corpus` OpenAI vector store.
+- Replaced the active local embedding retrieval path with OpenAI vector-store search and GPT-5.5 Responses API generation.
+- Updated smoke and timeline tests to validate the current scrollytelling site and OpenAI-hosted RAG path.
+
+**Commit**: `Use OpenAI vector store for Dr Cortes RAG`
+**Status**: ✅ Pushed
+
+---

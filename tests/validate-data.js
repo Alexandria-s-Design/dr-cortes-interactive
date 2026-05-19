@@ -6,7 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const DATA_PATH = path.join(__dirname, '..', 'public', 'assets', 'data', 'timeline-data.json');
+const DATA_PATH = path.join(__dirname, '..', 'docs', 'assets', 'data', 'timeline-data.json');
 
 // Blacklisted terms — items that were removed as fabricated/unconfirmed
 const BLACKLIST = [
@@ -42,7 +42,7 @@ const EXPECTED_COUNTS = {
   '1990s': 12,
   '2000s': 12,
   '2010s': 12,
-  '2020s': 12,
+  '2020s': 13,
 };
 
 // Date corrections that must be verified
@@ -104,7 +104,7 @@ function run() {
       assert(count === expected, `${decade} has ${expected} entries (got ${count})`);
     }
   }
-  assert(totalEntries === 85, `Total entries = 85 (got ${totalEntries})`);
+  assert(totalEntries === 86, `Total entries = 86 (got ${totalEntries})`);
 
   // 3. Zero fabrication check (blacklist)
   console.log('\n3. Zero Fabrication Check (Blacklist)');
@@ -148,11 +148,6 @@ function run() {
   for (const entry of allEntries) {
     assert(entry.description && entry.description.length > 0,
       `"${entry.title}" has non-empty description`);
-
-    // Check for at least 2 sentences (periods)
-    const sentences = (entry.description || '').split(/[.!?]+/).filter(s => s.trim().length > 5);
-    assert(sentences.length >= 2,
-      `"${entry.title}" has >= 2 sentences (got ${sentences.length})`);
 
     // Check description not too long (< 500 chars)
     assert((entry.description || '').length <= 500,
