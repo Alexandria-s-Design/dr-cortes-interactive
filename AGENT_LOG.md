@@ -44,3 +44,14 @@
 **Status**: ✅ Pushed
 
 ---
+
+### 2026-05-19 11:39:55 — Codex (GPT)
+**Task**: Remove article/manuscript drafts from the Dr. Cortes OpenAI vector store.
+**Changes**:
+- Removed five requested draft/manuscript files from `dr-cortes-interactive-corpus`.
+- Verified the vector store now has 75 completed files and none of the requested filenames remain.
+
+**Commit**: `Log vector store draft removal`
+**Status**: ✅ Pushed
+
+---
