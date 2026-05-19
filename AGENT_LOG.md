@@ -55,3 +55,16 @@
 **Status**: ✅ Pushed
 
 ---
+
+### 2026-05-19 12:49:20 — Codex (GPT)
+**Task**: Ingest Dr. Cortes email corpus materials and adjust the chatbot to answer in third person.
+**Changes**:
+- Downloaded and uploaded 55 Carlos-approved email/source items into the `dr-cortes-interactive-corpus` OpenAI vector store.
+- Verified the vector store has 127 completed files and 0 failed files after ingestion.
+- Updated GPT-5.5 RAG instructions, refusal copy, identity handling, and output validation so answers use third person and do not claim to be Dr. Cortes.
+- Stripped OpenAI file-citation artifacts from generated chatbot answers before TTS.
+
+**Commit**: `Use third-person Cortes interactive voice`
+**Status**: ✅ Pushed
+
+---
