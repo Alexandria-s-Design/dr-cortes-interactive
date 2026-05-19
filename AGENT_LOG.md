@@ -68,3 +68,16 @@
 **Status**: ✅ Pushed
 
 ---
+
+### 2026-05-19 13:05:19 — Codex (GPT)
+**Task**: Verify the Alexandria's World Drive article folder is represented in the Dr. Cortes RAG and lock third-person response behavior.
+**Changes**:
+- Downloaded the `Dr Cortes RAG Documents` Drive folder through `alexandriasworld1234@gmail.com`.
+- Uploaded five missing folder items to the OpenAI vector store and confirmed 132 completed files, 0 failed.
+- Confirmed `Renewing Multicultural Education...` was already present and kept the previously removed CEC Guide manuscript and works spreadsheet out of the store.
+- Added a smoke-test assertion that fails if responses or refusals speak as Dr. Cortes in first person.
+
+**Commit**: `Verify Drive articles in Cortes RAG`
+**Status**: ✅ Pushed
+
+---
